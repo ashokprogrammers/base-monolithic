@@ -32,11 +32,9 @@ router.get(
  */
 var userStorage = multer.diskStorage({
   destination: function(req, file, cb) {
-    console.log('erer')
     cb(null, path.join(__dirname, '../../public/uploads/user'))
   },
   filename: function(req, file, cb) {
-    console.log('dfgdfgdgdfg')
     cb(null, file.fieldname + '_' + Date.now() + '_' + file.originalname)
   }
 })

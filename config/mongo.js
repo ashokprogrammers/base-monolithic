@@ -7,12 +7,7 @@ module.exports = () => {
     mongoose.Promise = global.Promise
 
     mongoose.connect(
-      DB_URL,
-      {
-        keepAlive: true,
-        reconnectTries: Number.MAX_VALUE,
-        useNewUrlParser: true
-      },
+      DB_URL, {  useNewUrlParser: true ,useUnifiedTopology: true},
       err => {
         let dbStatus = ''
         if (err) {
